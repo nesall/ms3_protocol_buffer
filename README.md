@@ -4,6 +4,8 @@ Tested on MS3Pro Evo (which is basically MS3). Should work on other versions too
 Example usage:
 
 ```java
+  private MS3ProtocolBuffer protocolBuffer = new MS3ProtocolBuffer();
+
   private MyAsyncReader serialCallback = new MyAsyncReader() {
     @Override
     public void onReceiveData(byte[] data) {
