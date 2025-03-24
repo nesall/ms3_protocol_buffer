@@ -12,13 +12,11 @@ Example usage:
       if (data == null)
         return;
       try {
-        if (data != null) {
-          protocolBuffer.appendData(data);
-          while (protocolBuffer.hasMoreCommands()) {
-            byte[] message = protocolBuffer.nextBinaryCommand(); // Extract full message
-            // TODO: work with message
-            // message is a complete message. It is not truncated nor does it have any extra bytes.
-          }
+        protocolBuffer.appendData(data);
+        while (protocolBuffer.hasMoreCommands()) {
+          byte[] message = protocolBuffer.nextBinaryCommand(); // Extract full message
+          // TODO: work with message
+          // message is a complete message. It is not truncated nor does it have any extra bytes.
         }
       } catch (Exception e) {
         e.printStackTrace();
